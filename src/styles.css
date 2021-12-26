@@ -40,7 +40,7 @@ h4 {
   right: 0;
 }
 .background {
-  background-image: url("images/weatherbackground.jpeg");
+  background-image: url("../images/weatherbackground.jpeg");
   background-size: cover;
   margin: 20px auto;
   max-width: 600px;
