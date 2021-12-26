@@ -1,0 +1,76 @@
+body {
+  font-family: "Play", sans-serif;
+  font-family: "Poppins", sans-serif;
+  color: #ff5403;
+}
+input {
+  margin-top: 30px;
+  font-size: 18px;
+  font-weight: 100;
+  line-height: 28px;
+}
+#current {
+  color: white;
+  background: rgb(6, 136, 71);
+  border: 1px solid rgb(4, 65, 29);
+  border-radius: 5px;
+  padding: 5px 20px;
+  margin: 5px 30px 20px 0;
+  transition: all 200ms ease-in-out;
+}
+button {
+  color: white;
+  background: rgb(42, 86, 230);
+  border: 1px solid rgb(42, 86, 230);
+  border-radius: 40px;
+  padding: 10px 20px;
+  margin: -15px 10px 20px 0;
+  transition: all 200ms ease-in-out;
+}
+button:hover {
+  background: rgb(18, 58, 190);
+  opacity: 0.8;
+  cursor: pointer;
+}
+h4 {
+  margin-top: 40px;
+  text-align: right;
+  width: 100%;
+  top: 0;
+  right: 0;
+}
+.background {
+  background-image: url("images/weatherbackground.jpeg");
+  background-size: cover;
+  margin: 20px auto;
+  max-width: 600px;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 2px 6px 4px 0 gray;
+}
+.city {
+  font-size: 50px;
+  font-weight: 600;
+  margin: 10px 5px 2px;
+}
+.detail {
+  margin-top: 0px;
+  font-size: 16px;
+  font-weight: 200;
+}
+.weather {
+  padding: 20px 5px 20px 20px;
+  margin-top: 60px;
+  border: 1px solid rgb(42, 86, 230);
+  border-radius: 60px;
+}
+#Flink {
+  text-decoration: none;
+  color: #ff5403;
+  font-size: 40px;
+}
+#Clink {
+  text-decoration: none;
+  color: rgb(42, 86, 230);
+  font-size: 40px;
+}
