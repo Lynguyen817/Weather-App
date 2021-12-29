@@ -27,37 +27,26 @@ let month = months[now.getMonth()];
 let date = now.getDate();
 let year = now.getFullYear();
 let hours = now.getHours();
-if (hours < 10) {
-  hours = `0${hours}`;
+let TwentyFourHour = now.getHours();
+let mid = "pm";
+if (hours > 12) {
+  hours = hours - 12;
+}
+if (hours === 0){
+  hours = 12;
 }
 let minutes = now.getMinutes();
 if (minutes < 10) {
   minutes = `0${minutes}`;
 }
-let ampm = document.querySelector("#ampm");
-if (hours > 12) {
-  ampm = "pm";
-} else {
-  ampm = "am";
+if (TwentyFourHour < 12){
+  mid = "am";
 }
 let h4 = document.querySelector("h4");
-h4.innerHTML = `${day},${month} ${date}, ${year} <br/> ${hours} : ${minutes} ${ampm}`;
+h4.innerHTML = `${day},${month} ${date}, ${year} <br/> ${hours} : ${minutes} ${mid}`;
 
-function changeToC(event) {
-  event.preventDefault();
-  let Celcius = document.querySelector("#degree");
-  Celcius.innerHTML = "41";
-}
-let switchToCelcius = document.querySelector("#Flink");
-switchToCelcius.addEventListener("click", changeToC);
 
-function changeToF(event) {
-  event.preventDefault();
-  let Fahrenheit = document.querySelector("#degree");
-  Fahrenheit.innerHTML = "5";
-}
-let switchToFahrenheit = document.querySelector("#Clink");
-switchToFahrenheit.addEventListener("click", changeToF);
+
 
 //Search temperature
 function search(event) {
@@ -70,13 +59,24 @@ function search(event) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchInput.value}&units=metric&appid=${apiKey}`;
 
   function showTemperature(response) {
-    let currentCity = document.querySelector("#cityname");
-    currentCity.innerHTML = response.data.name;
+    document.querySelector("#cityname").innerHTML = response.data.name;
     let temperature = Math.round(response.data.main.temp);
-    let degree = document.querySelector("#degree");
-    degree.innerHTML = temperature;
-    let description = document.querySelector("#description");
-    description.innerHTML = response.data.weather[0].main;
+    document.querySelector("#degree").innerHTML = temperature;
+    document.querySelector("#description").innerHTML = response.data.weather[0].main;
+    
+    function changeToC (event){
+      event.preventDefault();
+      document.querySelector("#degree").innerHTML = temperature;
+    }
+    let switchToCelcius = document.querySelector("#Clink");
+     switchToCelcius.addEventListener("click", changeToC);
+    function changeToF (event){
+      event.preventDefault();
+      let FahTemperature = document.querySelector("#degree");
+      FahTemperature.innerHTML = Math.round((temperature*9/5) + 32);
+    }
+      let switchToFahrenheit = document.querySelector("#Flink");
+      switchToFahrenheit.addEventListener("click", changeToF);
   }
   function changeHumidity(response) {
     let humidity = response.data.main.humidity;
