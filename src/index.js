@@ -81,12 +81,12 @@ function search(event) {
   function changeHumidity(response) {
     let humidity = response.data.main.humidity;
     let humidityElement = document.querySelector("#humidity");
-    humidityElement.innerHTML = `${humidity} %`;
+    humidityElement.innerHTML = `Humidity : ${humidity} %`;
   }
   function changeWind(response) {
     let wind = response.data.wind.speed;
     let windElement = document.querySelector("#wind");
-    windElement.innerHTML = `${wind} m/s`;
+    windElement.innerHTML = `Wind : ${wind} m/s`;
   }
   axios.get(apiUrl).then(showTemperature);
   axios.get(apiUrl).then(changeHumidity);
