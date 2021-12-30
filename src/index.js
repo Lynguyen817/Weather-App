@@ -49,7 +49,8 @@ h4.innerHTML = `${day},${month} ${date}, ${year} <br/> ${hours} : ${minutes} ${m
 
 
 //Search temperature
-function search(event) {
+ 
+function handleSubmit(event) {
   event.preventDefault();
   let searchInput = document.querySelector("#search-input");
   searchInput.innerHTML = `${searchInput.value}`;
@@ -57,7 +58,6 @@ function search(event) {
   cityInput.innerHTML = `${searchInput.value}`;
   let apiKey = "8a8052e8868f50698a39b01529899d81";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchInput.value}&units=metric&appid=${apiKey}`;
-
   function showTemperature(response) {
     document.querySelector("#cityname").innerHTML = response.data.name;
     let temperature = Math.round(response.data.main.temp);
@@ -96,7 +96,7 @@ function search(event) {
 }
 
 let form = document.querySelector("#search-form");
-form.addEventListener("submit", search);
+form.addEventListener("click", handleSubmit);
 
 //Current button
 function showLocation(event) {
@@ -119,3 +119,4 @@ function showLocation(event) {
 }
 let currentTemperature = document.querySelector("#current");
 currentTemperature.addEventListener("click", showLocation);
+
