@@ -65,6 +65,7 @@ h4 {
 }
 #description {
   text-transform: capitalize;
+  font-size: 40px;
 }
 #Flink,
 #Clink {
