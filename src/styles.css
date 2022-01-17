@@ -11,8 +11,9 @@ input {
 }
 #current {
   color: white;
-  background: rgb(6, 136, 71);
-  border: 1px solid rgb(6, 136, 71);
+  background: #ff5403;
+  opacity: 0.88;
+  border: 1px solid #ff5403;
   border-radius: 5px;
   padding: 5px 20px;
   margin: 5px 30px 20px 0;
