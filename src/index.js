@@ -74,6 +74,7 @@ function handleSubmit(event) {
       document.querySelector("#degree").innerHTML = temperature;
     }
     let switchToCelcius = document.querySelector("#Clink");
+     switchToCelcius.innerHTML = `°C  |`;
      switchToCelcius.addEventListener("click", changeToC);
   function changeToF (event){
       event.preventDefault();
@@ -81,6 +82,7 @@ function handleSubmit(event) {
       FahTemperature.innerHTML = Math.round((temperature*9/5) + 32);
     }
     let switchToFahrenheit = document.querySelector("#Flink");
+      switchToFahrenheit.innerHTML = `°F`;
       switchToFahrenheit.addEventListener("click", changeToF);
   }
   function changeHumidity(response) {
@@ -97,11 +99,6 @@ function handleSubmit(event) {
   axios.get(apiUrl).then(changeHumidity);
   axios.get(apiUrl).then(changeWind);
  
-}
-
-let form = document.querySelector("#search-form");
-form.addEventListener("click", handleSubmit);
-
 //Current location
 function showLocation(event) {
   event.preventDefault();
@@ -123,6 +120,12 @@ function showLocation(event) {
 }
 let currentTemperature = document.querySelector("#current");
 currentTemperature.addEventListener("click", showLocation);
+
+}
+
+let form = document.querySelector("#search-form");
+form.addEventListener("click", handleSubmit);
+
 
 //Weather Forecast
 
@@ -164,12 +167,11 @@ function displayForecast(response){
  
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
+
 }
+
 function getForecast(coordinates){
     let apiKey = "8a8052e8868f50698a39b01529899d81";
     let url = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
     axios.get(url).then (displayForecast);
 }
- 
-  
-
