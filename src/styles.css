@@ -14,8 +14,8 @@ input {
   background: #ff5403;
   opacity: 0.88;
   border: 1px solid #ff5403;
-  border-radius: 5px;
-  padding: 5px 20px;
+  border-radius: 25px;
+  padding: 5px 16px;
   margin: 5px 30px 20px 0;
   transition: all 200ms ease-in-out;
 }
